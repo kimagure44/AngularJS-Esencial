@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!-- Definimos la app angular-->
 <html lang="es" data-ng-app="app01">
     <head>
         <meta charset="UTF-8">
         <title>Imagenes</title>
     </head>
     <body>
+        <!-- Definimos el controlador y los eventos para los botones -->
         <div data-ng-controller="ctrlApp01">
             <img alt="" data-ng-src="{{imgActual}}">
             <button data-ng-click="mostrar('http://www.newlink.es/blog/wp-content/uploads/2015/03/Islas-de-San-Blas-Panam%C3%A11.png')">A</button>
@@ -15,6 +17,7 @@
             var app = angular.module("app01", []);
             app.controller("ctrlApp01",["$scope", function($scope){
                 $scope.imgActual = "http://www.newlink.es/blog/wp-content/uploads/2015/03/Islas-de-San-Blas-Panam%C3%A11.png";
+                // Evento para realizar la accion
                 $scope.mostrar = function(_img) {
                     $scope.imgActual = _img;
                 };
