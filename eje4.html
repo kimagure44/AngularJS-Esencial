@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <title>Filtros ejemplo</title>
+        <style>
+            .tarjeta > h2 {
+                background: #00aa00;
+                color: #ffffff;
+                padding: 0;
+                margin: 0;
+            }
+            .tarjeta {
+                border: 1px solid #000000;
+                max-width: 250px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="nombre"></label>        
+        <input type="text" ng-model="nombre" maxlength="10">
+        <div class="tarjeta">
+            <h2>Mi nombre es</h2>
+            <h1>{{ nombre }}</h1>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+    </body>
+</html>

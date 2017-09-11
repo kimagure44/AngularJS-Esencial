@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Propiedades</title>
+        <style>
+            .angular {
+                font-size:30px;
+                background: #0000ff;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div data-ng-controller="ctrl01">
+            <div class="contenedor">
+                <p data-ng-style="estilos">Parrafo <span data-ng-class="clase">CSS</span></p>
+            </div>
+            <button data-ng-click="css()">CSS</button>
+            <button data-ng-click="cssClass()">CLASS</button>
+            <button data-ng-click="reset()">RESET</button>
+        </div>       
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+            var app = angular.module("app01", []);
+            app.controller("ctrl01",["$scope", function($scope){
+                $scope.css = function() {
+                    $scope.estilos = {
+                        "background-color": "#ff0000",
+                        "color":"#ffffff"
+                    }
+                    
+                    $scope.cssClass = function() {
+                        $scope.clase = "angular";
+                    }
+                    
+                    $scope.reset = function() {
+                        $scope.clase = "";
+                        $scope.estilos = "";
+                    }
+                }
+            }]);
+        </script>
+    </body>
+</html>

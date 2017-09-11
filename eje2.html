@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es" ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <title>Filtros ejemplo</title>
+    </head>
+    <body>
+        <h1>Verduras</h1>
+        <ul>
+            <li>Apio {{ 50 | currency}}</li>
+            <li>Brócoli {{ 50 | currency:"€" }}</li>
+            <li>Espinaca {{ 50 + 10 | currency:" cent " }} importada de {{ 'InDia' | uppercase }}</li>
+        </ul>        
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+        </script>
+    </body>
+</html>

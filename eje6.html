@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tienda</title>
+    </head>
+    <body>
+        <div data-ng-controller="ctrl01">
+            Nombre: {{ nombre }}
+        </div>
+        <div data-ng-controller="ctrl02">
+            Nombre: {{ nombre }}
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+            var miApp = angular.module("app01",[]);
+            miApp.controller("ctrl01",["$scope", function($scope) {
+                $scope.nombre = "Iván";
+            }]);
+            miApp.controller("ctrl02",["$scope", function($scope) {
+                $scope.nombre = "Sergio";
+            }]);
+        </script>
+    </body>
+</html>

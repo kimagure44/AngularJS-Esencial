@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tienda</title>
+    </head>
+    <body>
+        <div data-ng-controller="ctrl01">
+            <h1>Nombres</h1>
+            <ul>
+                <li data-ng-repeat="nombre in nombres">
+                    {{nombre}}
+                </li>
+            </ul>
+        </div>       
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+            var app = angular.module("app01", []);
+            app.controller("ctrl01",["$scope", function($scope){
+                $scope.nombres = ["Iván", "Paula", "Sergio"];
+            }]);
+        </script>
+    </body>
+</html>

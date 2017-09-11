@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Propiedades</title>
+        <style>
+            .alerta {
+                font-size: 30px;
+                background: darkcyan;
+                color: #ffffff;
+                width: 200px;
+                margin: 20px;
+                padding: 10px;
+                text-align: center;
+                border: 3px solid #000000;
+                box-shadow: 2px 3px 5px rgba(0,0,0,0.5);
+            }
+        </style>
+    </head>
+    <body>
+        <div data-ng-controller="ctrl01">
+            <div class="alerta" data-ng-show="visibilidad">
+                Mensaje
+            </div>
+            <button data-ng-click="show()">Mostrar</button>
+            <button data-ng-click="hide()">Ocultar</button>
+        </div>       
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+            var app = angular.module("app01", []);
+            app.controller("ctrl01",["$scope", function($scope){
+                $scope.visibilidad = false;
+                $scope.show = function () {
+                    $scope.visibilidad = true;
+                }
+                $scope.hide = function () {
+                    $scope.visibilidad = false;
+                }
+            }]);
+        </script>
+    </body>
+</html>

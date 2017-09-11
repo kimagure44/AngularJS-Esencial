@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tienda</title>
+    </head>
+    <body>
+        <div data-ng-controller="ctrl01">
+            <button data-ng-click="click0()">Click</button>
+            <button data-ng-dblclick="click1()">Click</button>
+            <img alt="Mario Bros" src="http://www.3djuegos.com/juegos/12232/nintendo_nx/fotos/noticias/nintendo_nx-3761272.jpg" data-ng-mouseleave="mouseLeave()" data-ng-mouseenter="mouseEnter()">
+            <h1>{{evento}}</h1>
+        </div>       
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+        <script>
+            var app = angular.module("app01", []);
+            app.controller("ctrl01",["$scope", function($scope){
+                $scope.click0 = function() {
+                    $scope.evento = "click";
+                };
+                $scope.click1 = function() {
+                    $scope.evento = "click doble";
+                };
+                $scope.mouseLeave = function() {
+                    $scope.evento = "Salir imagen";
+                };
+                $scope.mouseEnter = function() {
+                    $scope.evento = "Entrar imagen";
+                };
+            }]);
+        </script>
+    </body>
+</html>
