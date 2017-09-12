@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- Definimos la app angular-->
+<html lang="es" data-ng-app="app01">
+    <head>
+        <meta charset="UTF-8">
+        <title>Imagenes</title>
+        <style>
+            header h1 {
+                text-align: center;
+                background: aquamarine;
+                width: 60%;
+                margin: 0 auto;
+                box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: inline-block;
+                background: background;
+                color: #ffffff;
+            }
+            body > div:nth-child(2) {
+                text-align: center;
+            }
+            li {
+                width: 200px;
+                float: left;
+                background: #cccccc;
+                cursor: pointer;
+            }
+            .container {
+                text-align: center;
+                font-size: 30px;
+            }
+            h1 {
+                text-align: center;
+            }
+            .link {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div data-ng-include src="'plantillas/header.html'"></div>
+        <div data-ng-include src="'plantillas/menu.html'"></div>
+        <div class="container">Visita mi web</div>
+        <div data-ng-view></div>
+        <div class="link">
+            <a href="#!/hola">Hola</a>
+            <a href="#!/">Inicio</a>
+            <a href="#!/tabla1">Tabla 1</a>
+            <a href="#!/tabla2">Tabla 2</a>
+            <a href="#!/tabla3">Tabla 3</a>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+        <script>
+            var app = angular.module('app01', ['ngRoute']);
+            app.config(['$routeProvider',function($routeProvider) {
+                $routeProvider.when('/hola', {
+                    templateUrl: 'plantillas/hola.html'
+                })
+                .when('/tabla1',{
+                    templateUrl: 'tablas/tabla1.html'
+                })
+                .when('/tabla2',{
+                    templateUrl: 'tablas/tabla2.html'
+                })
+                .when('/tabla3',{
+                    templateUrl: 'tablas/tabla3.html'
+                })
+                .otherwise({
+                    redirectTo: '/',
+                    templateUrl: 'plantillas/inicio.html'
+                });
+            }]);
+        </script>
+    </body>
+</html>
